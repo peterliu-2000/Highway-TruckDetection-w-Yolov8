@@ -1,4 +1,3 @@
-import PySimpleGUI as sg
 from ultralytics import YOLO
 from frameprocessing import *
 from createwindow import *
