@@ -6,7 +6,7 @@ from storeoutput import *
 window = create_window('GreenMono')
 
 run_model = False
-model = YOLO('myWeights.pt')
+model = YOLO('best.pt')
 class_list = model.model.names
 classes = class_list.keys()
 vehicles_counter = dict.fromkeys(classes, 0)
@@ -41,11 +41,14 @@ while True:
 
         if ret:
             show_counter = values['counter']
-            labeled_frame = draw_frame(model,frame,conf, class_list,vehicles_counter,show_counter,frame_num,frame_folder_path)
+            show_video = values['show']
+            labeled_frame = draw_frame(model,frame,conf, class_list,vehicles_counter,show_counter,frame_num,frame_folder_path, show_video)
             output_video.write(labeled_frame)
-            resized_frame = resize_frame(labeled_frame, scale_percent)
-            imgbytes = cv2.imencode('.png', resized_frame)[1].tobytes()
-            window['display'].update(data=imgbytes)
+
+            if show_video:
+                resized_frame = resize_frame(labeled_frame, scale_percent)
+                imgbytes = cv2.imencode('.png', resized_frame)[1].tobytes()
+                window['display'].update(data=imgbytes)
 
         else:
             video.release()

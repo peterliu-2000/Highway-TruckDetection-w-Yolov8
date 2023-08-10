@@ -68,11 +68,12 @@ def draw_frame(model,frame,conf, class_list, vehicles_counter, show_counter):
 
 
 
-def draw_frame(model,frame,conf, class_list, vehicles_counter,show_counter,frame_num,frame_folder_path):
+def draw_frame(model,frame,conf, class_list, vehicles_counter,show_counter,frame_num,frame_folder_path, show_video):
 
-
-
-    result = model.predict(frame, conf=conf, iou=0.6)
+    if show_video:
+        result = model.predict(frame, conf=conf, iou=0.6)
+    else:
+        result = model.predict(frame, device='mps', conf=conf, iou=0.6)
     frame_height, frame_width, num_channels = frame.shape
     boxes = result[0].boxes.xyxy.cpu().numpy()
     conf = result[0].boxes.conf.cpu().numpy()
@@ -89,10 +90,10 @@ def draw_frame(model,frame,conf, class_list, vehicles_counter,show_counter,frame
     #TODO: Line position & offset value might be adjusted depending on different camera angles
     line_left = (0, int(frame_height * 0.6))
     line_right = (int(frame_width), int(frame_height * 0.6))
-    offset = int(frame_height/120)
+    offset = int(frame_height/200)
 
     #TODO: Update box_colors if new classes are added (currently 2)
-    box_colors = [(123, 45, 234), (99, 3, 39)]
+    box_colors = [(123, 45, 234), (99, 3, 39),(244,12,190),(66,223,66)]
     box_color_dict = {}
     for id in range(0,len(class_list)):
         box_color_dict[id] = box_colors[id]
@@ -106,7 +107,7 @@ def draw_frame(model,frame,conf, class_list, vehicles_counter,show_counter,frame
         ymax = int(box[3])
 
         #TODO: adjusted_y value can be tweaked
-        adjusted_y = int((ymax + ymin) / 2)
+        adjusted_y = int((ymax + ymin)/2)
         cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), box_color, box_thickness)
 
         text_print = '{label} {con:.2f}'.format(label=label, con=conf)
