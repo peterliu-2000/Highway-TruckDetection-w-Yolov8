@@ -23,8 +23,8 @@ The main object recognition algorithm used is YOLOV-8 (You Only Look Once ver-8)
 
 The training image set was manually scraped from a series of surveillance video camera on a few highways in Shanxi Province; weather conditions are generally sunny and video is of high quality, with no visual obstructions. Some examples (contact peterzehan@gmail.com if you need the entire dataset)
 
-<img src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/0db72494-d395-4760-b148-83b8e2f56b5d" width="510" alt="Example 1">
-<img src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/138f4f54-57c8-4ceb-bace-1881299ddff6" width="455" alt="Example 2">
+<img src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/0db72494-d395-4760-b148-83b8e2f56b5d" width="490" alt="Example 1">
+<img src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/138f4f54-57c8-4ceb-bace-1881299ddff6" width="432" alt="Example 2">
 
 #### Image Annotation ####
 
@@ -57,8 +57,8 @@ The training image was annotated through Roboflow (https://roboflow.com/), which
  Precision-Recall curve and the confusion matrix both show good results; the only obvious shortcoming is the misclassification of background cars/trucks into one of the target truck class:
 
 <p align="center">
-  <img width="442" alt="image" src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/4f00db21-f2ad-4b86-b327-323a02af4f2f">
-  <img width="382" alt="image" src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/d88f3bf9-60ea-45a7-9276-87fa4dff449f">
+  <img width="430" alt="image" src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/4f00db21-f2ad-4b86-b327-323a02af4f2f">
+  <img width="372" alt="image" src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/d88f3bf9-60ea-45a7-9276-87fa4dff449f">
 </p>
 
 #### By-Frame Recognition & Vehicle Counting
