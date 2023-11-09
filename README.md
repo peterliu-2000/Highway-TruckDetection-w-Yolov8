@@ -67,7 +67,9 @@ Frame-by-frame recognition by YOLOV8 is faciliated by the OpenCV package in Pyth
 
 In terms of counting, I developed a crude way of counting vehicles passed by specifying a rectangular region in the middle of the screen, with 1/75 of the full frame length, such that if a frame contains the mid-point of a predicted bounding box, that type of vehicle count is upped by one. However this is not an accurate way of accounting, since at times the same vehicle midpoint can be in more than one frames, or just happens to miss the frames; the 1/75 ratio was obtained through trial and error, and it can be tweaked for videos when camera angles, vehicles speed etc. are different.
 
-![image](https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/72415ba6-30c9-42d7-8c4a-ab7c47755b1d)
+<p align="center">
+  <img width="650" alt="image" src="https://github.com/peterliu-2000/Highway-TruckDetection-w-Yolov8/assets/136511104/72415ba6-30c9-42d7-8c4a-ab7c47755b1d">
+</p>
 
 #### User Interface ####
 
