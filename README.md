@@ -13,7 +13,7 @@ This Github and README.md file were created to both document what I accomplished
 
 The project was programmed in Python 3.10 environment The main program is contained in _main.py_, and the rest of the Python files contain supporting functions and should be downloaded in the same pathway with main if one should use it. 
 
-myWeights.pt contains the neural network trained specifically for identifying large trucks/oil tanks in Shanxi highway.
+best.pt contains the neural network trained specifically for identifying large trucks/oil tanks in Shanxi highway.
 
 ## Methods ##
 
@@ -32,7 +32,7 @@ The training image was annotated through Roboflow (https://roboflow.com/), which
 
 #### Model Training & Results ####
 
- Both Roboflow and YOLOV8 can be implemented easily in Python environment; the myWeights.pt neural network is trained by the following code:
+ Both Roboflow and YOLOV8 can be implemented easily in Python environment; the best.pt neural network is trained by the following code:
 
  <pre>
 ```python
